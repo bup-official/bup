@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider        = "prisma-client-js"
+    previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+    provider             = "mysql"
+    url                  = env("DATABASE_URL")
+    referentialIntegrity = "prisma"
+}
+
+model BupCard {
+    id        String   @id @default(uuid())
+    cardSlug  String   @unique
+    cardTitle String? // Use ? to represent a nullable value
+    createdAt DateTime @default(now())
+    Header    Header[]
+    VCard     VCard[]
+}
+
+model Header {
+    id        String   @id @default(cuid())
+    createdAt DateTime @default(now())
+    text      String
+    bupCard   BupCard  @relation(fields: [cardId], references: [id])
+    cardId    String
+
+    @@index([cardId])
+}
+
+model VCard {
+    id           String   @id @default(cuid())
+    createdAt    DateTime @default(now())
+    vCardTitle   String
+    firstName    String?
+    lastName     String?
+    phoneNumber  String?
+    emailAddress String?
+    url          String?
+    note         String?
+    bupCard      BupCard  @relation(fields: [cardId], references: [id])
+    cardId       String
+}

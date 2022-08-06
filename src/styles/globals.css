@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
+@import url("https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css");
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+a {
+    /* color: rgb(28, 28, 28); */
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+.text-gradient {
+    background: -webkit-linear-gradient(#008142, #048BBF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #4e6e8d38;
+}
+
+.button-gradient {
+    background: linear-gradient(to right, #5252C1, #67EEDE);
+    color: #fff;
+    background-size: 150%;
+    transition: background-size 0.5s ease;
+}
+
+.button-gradient:hover {
+    background-size: 200%;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap");
+
+/* .wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+} */
+
+.card-item {
+    width: 380px;
+    /*min-height: 300px*/
+    margin: 25px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 18px 40px -16px rgba(36, 64, 255, 0.25);
+    transition: ease 0.4s;
+
+}
+
+.card-item .color-back-img {
+    width: 330px;
+    height: 190px;
+    position: absolute;
+    margin: 25px;
+    border-radius: 15px;
+    z-index: 0;
+}
+
+.card-item .img-card {
+    position: absolute;
+    width: 350px;
+    left: 0;
+    right: 0;
+    margin: -60px auto 0;
+}
+
+.card-item .title {
+    padding: 0px 35px 15px 35px;
+    font-weight: 500;
+    color: #707070;
+    font-size: 24px;
+    text-align: center;
+}
+
+.card-item .sub-title {
+    padding: 0px 0px 15px 0px;
+    font-weight: 500;
+    color: #707070;
+    font-size: 12px;
+    text-align: center;
+}
+
+.card-item .text-body {
+    font-weight: 300;
+    color: #707070;
+    font-size: 13px;
+    line-height: 22px;
+    padding: 15px 0px 15px 0px;
+    text-align: center;
+}
+
+.card-item .card-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.card-item .card-footer .btn-card {
+    width: 150px;
+    height: 45px;
+    text-align: center;
+    padding: 11px;
+    font-size: 19px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.card-item .card-footer .icons {
+    padding-bottom: 15px;
+    width: 200px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card-item .card-footer .icons .bx {
+    color: #a9a9a9;
+}
+
+.bxl-dribbble {
+    position: fixed;
+    bottom: 15px;
+    right: 30px;
+    color: #ea4c89;
+    font-size: 45px;
+}
+
+@media (max-width: 849px) {
+    /* .wrapper {
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+    } */
+
+    .wrapper .card-item {
+        margin: 65px 0 30px;
+    }
+
+    .bxl-dribbble {
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-item {
+        width: 250px;
+        min-height: 240px;
+        border-radius: 14px;
+    }
+
+    .card-item .color-back-img {
+        width: 220px;
+        height: 115px;
+        margin: 15px;
+        border-radius: 10px;
+    }
+
+    .card-item .img-card {
+        width: 240px;
+    }
+
+    .card-item .title {
+        padding: 0px 20px 15px 20px;
+        font-size: 15px;
+    }
+
+    .card-item .text-body {
+        font-size: 12px;
+        line-height: 17px;
+        padding: 0 20px 15px;
+    }
+
+    .card-item .card-footer .btn-card {
+        width: 100px;
+        height: 36px;
+        padding: 9px;
+        font-size: 14px;
+        border-top-right-radius: 14px;
+        border-bottom-left-radius: 14px;
+    }
+
+    .card-item .card-footer .icons {
+        padding: 12px 0;
+        width: 130px;
+    }
+
+    .bxl-dribbble {
+        bottom: 10px;
+        right: 10px;
+        font-size: 30px;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0, 80px, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+.animated {
+    animation-duration: 0.6s;
+    animation-delay: 700ms;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.6s;
+    -webkit-animation-delay: 700ms;
+    -webkit-animation-fill-mode: both;
+}
+
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+}
+
+section {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+/* Avatar Placeholder */
+section>div {
+    background: green;
+    border-radius: 100%;
+    display: flex;
+    width: 4.5rem;
+    height: 4.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+section>div p {
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+hr {
+    background-color: #fff;
+    padding: 0;
+}
+
+hr.hr-1 {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0));
+}
+
+.btn-download {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.wrapper1 {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
