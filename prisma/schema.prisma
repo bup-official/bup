@@ -25,7 +25,7 @@ model Header {
     id        String   @id @default(cuid())
     createdAt DateTime @default(now())
     text      String
-    bupCard   BupCard? @relation(fields: [cardId], references: [id], onDelete: Cascade)
+    bupCard   BupCard  @relation(fields: [cardId], references: [id])
     cardId    String
 
     @@index([cardId])
@@ -41,6 +41,6 @@ model VCard {
     emailAddress String?
     url          String?
     note         String?
-    bupCard      BupCard? @relation(fields: [cardId], references: [id], onDelete: Cascade)
+    bupCard      BupCard  @relation(fields: [cardId], references: [id], onDelete: Cascade)
     cardId       String
 }

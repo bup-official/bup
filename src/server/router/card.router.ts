@@ -90,9 +90,19 @@ export const cardRouter = createRouter()
             id: z.string()
         }),
         async resolve({ input, ctx }) {
-            return await ctx.prisma.bupCard.delete({
+            await ctx.prisma.bupCard.delete({
                 where: {
                     id: input.id
+                }
+            })
+            await ctx.prisma.header.deleteMany({
+                where: {
+                    cardId: input.id
+                }
+            })
+            await ctx.prisma.vCard.deleteMany({
+                where: {
+                    cardId: input.id
                 }
             })
         }
