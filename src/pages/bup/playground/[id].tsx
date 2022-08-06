@@ -165,7 +165,7 @@ export default function Playground(
 
                         {/* Map Over the Headers */}
                         {card.headers.map((header) => (
-                            <div>
+                            <div key={header.id}>
                                 <p className='mt-5'>{header.text}</p>
                                 <button className="p-2 border rounded-lg border-slate-200" type="submit" onClick={() => deleteHeader(header.id)}>Delete</button>
 
@@ -230,7 +230,7 @@ export default function Playground(
 
                         {/* Map Over the Headers */}
                         {card.vCard.map((v) => (
-                            <div>
+                            <div key={v.id}>
                                 <p className='mt-5'>{v.vCardTitle}</p>
                                 <button className="p-2 border rounded-lg border-slate-200" type="submit" onClick={() => deleteVCard(v.id)}>Delete</button>
 

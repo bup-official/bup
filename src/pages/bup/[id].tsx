@@ -37,7 +37,7 @@ export default function Card(
                 ))}
                 {
                     card.vCard.map((v) => (
-                        <VCard v={v as GetVCardType} />
+                        <VCard key={v.id} v={v as GetVCardType} />
                     ))
                 }
             </main>
