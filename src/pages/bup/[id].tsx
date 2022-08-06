@@ -33,7 +33,7 @@ export default function Card(
             <main className='max-w-section mx-auto py-10 grid grid-cols-1 justify-items-center border border-slate-100'>
                 <h1 className='text-3xl text-center'>{card.cardTitle}</h1>
                 {card.headers.map((header) => (
-                    <h1 className='text-center mt-10 text-2xl'>{header.text}</h1>
+                    <h1 key={header.id} className='text-center mt-10 text-2xl'>{header.text}</h1>
                 ))}
                 {
                     card.vCard.map((v) => (
