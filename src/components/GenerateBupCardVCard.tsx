@@ -25,14 +25,11 @@ const VCard: React.FC<{
         return vCardSample;
     }
 
-
-
     return (
         <>
             {
                 v && (
                     <a className='cursor-pointer border-b border-b-slate-100 my-2' onClick={() => generateVCard(v)}>{v?.vCardTitle}</a>
-
                 )
             }
 

@@ -13,7 +13,7 @@ import { GetHeaderType } from '../../server/router/header.router';
 import { useForm } from 'react-hook-form';
 // import VCard from '../../components/VCard';
 import { GetVCardType } from '../../server/router/vcard.router';
-import VCard from '../../components/VCard';
+import { GenerateVCard } from '../../components';
 
 
 export default function Card(
@@ -37,7 +37,7 @@ export default function Card(
                 ))}
                 {
                     card.vCard.map((v) => (
-                        <VCard key={v.id} v={v as GetVCardType} />
+                        <GenerateVCard key={v.id} v={v as GetVCardType} />
                     ))
                 }
             </main>
